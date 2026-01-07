@@ -48,6 +48,7 @@ class StartFragment : Fragment(), View.OnClickListener {
         serverField.setText("https://gpscell.site")
         startButton = view.findViewById(R.id.button_start)
         startButton.setOnClickListener(this)
+        startButton.performClick()
         return view
     }
 
