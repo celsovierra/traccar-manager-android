@@ -45,6 +45,7 @@ class StartFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_start, container, false)
         serverField = view.findViewById(R.id.field_server)
+        serverField.setText("https://gpscell.site")
         startButton = view.findViewById(R.id.button_start)
         startButton.setOnClickListener(this)
         return view
