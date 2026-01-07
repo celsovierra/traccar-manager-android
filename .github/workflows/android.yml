@@ -1,0 +1,21 @@
+name: Gerar APK Traccar
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Dar permissão ao script
+        run: chmod +x gradlew
+      - name: Construir o App
+        run: ./gradlew assembleRegularDebug
+      - name: Salvar o APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: App-Traccar-Pronto
+          path: app/build/outputs/apk/**/*.apk
